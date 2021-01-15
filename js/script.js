@@ -1,12 +1,7 @@
-// funzione generatrice di una lista di numeri random
-function getRandomNums(countlimit, arraylength){
-  var num;
-  var nums = [];
-  do {
-    num = parseInt(Math.floor((Math.random() * countlimit) + 1));
-    nums.push(num);
-  } while (nums.length < arraylength);
-  return nums;
+// funzione generatrice numeri random
+function getRandomNum() {
+  var getResult = parseInt(Math.floor((Math.random() * 100) + 1));
+  return getResult;
 }
 
 // funzione inserimento di numero, verificandone la validità numerica
@@ -16,17 +11,29 @@ function getUserNum(){
     if (isNaN(number)) {
       alert('Ammessi solo caratteri numerici');
     }
-  } while (!isNaN(number));
+  } while (isNaN(number));
   return number;
 }
 
-$(document).ready(function(){
+// funzione generatrice di una lista di numeri
+function getNumsList(num, arraylength){
+  var nums = [];
+  do {
+    nums.push(num());
+  } while (nums.length < arraylength);
+  return nums;
+}
+
+$(document).ready(function(){ // quando il dom è pronto ...
 
   // impostiamo un limite ai numeri partecipanti
   var maxNums = 5;
   // generiamo un array di 5 numeri casuali
-  var randomNums = getRandomNums(100, maxNums);
+  var randomNums = getNumsList(getRandomNum, maxNums);
+  // generiamo un array di 5 numeri casuali
+  var userNums = getNumsList(getUserNum, maxNums);
 
   console.log(randomNums);
+  console.log(userNums);
 
 });
