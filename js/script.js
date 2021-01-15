@@ -30,10 +30,20 @@ $(document).ready(function(){ // quando il dom è pronto ...
   var maxNums = 5;
   // generiamo un array di 5 numeri casuali
   var randomNums = getNumsList(getRandomNum, maxNums);
+  alert('Tieni a mente questi ' + maxNums + ' numeri:\n' + randomNums);
+
   // generiamo un array di 5 numeri casuali
   var userNums = getNumsList(getUserNum, maxNums);
-
-  console.log(randomNums);
   console.log(userNums);
+
+  var commonNums = []; // dichiariamo array numeri comuni
+
+  // inseriamovi i numeri in comune tra i due precedenti array
+  for (var i = 0; i < maxNums; i++) {
+    if (randomNums.includes(userNums[i])) {
+      commonNums.push(userNums[i]);
+    }
+  };
+  console.log(commonNums);
 
 });
