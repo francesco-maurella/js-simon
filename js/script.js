@@ -32,18 +32,23 @@ $(document).ready(function(){ // quando il dom è pronto ...
   var randomNums = getNumsList(getRandomNum, maxNums);
   alert('Tieni a mente questi ' + maxNums + ' numeri:\n' + randomNums);
 
-  // generiamo un array di 5 numeri casuali
-  var userNums = getNumsList(getUserNum, maxNums);
-  console.log(userNums);
+  setTimeout(function(){
+    // generiamo un array di 5 numeri scelti dall'user
+    var userNums = getNumsList(getUserNum, maxNums);
+    console.log(userNums);
 
-  var commonNums = []; // dichiariamo array numeri comuni
+    var commonNums = []; // dichiariamo array numeri comuni
 
-  // inseriamovi i numeri in comune tra i due precedenti array
-  for (var i = 0; i < maxNums; i++) {
-    if (randomNums.includes(userNums[i])) {
-      commonNums.push(userNums[i]);
+    // inseriamovi i numeri in comune tra i due precedenti array
+    for (var i = 0; i < maxNums; i++) {
+      if (randomNums.includes(userNums[i])) {
+        commonNums.push(userNums[i]);
+      }
     }
-  };
-  console.log(commonNums);
+
+    alert(commonNums)
+
+  }, 3000);
+
 
 });
