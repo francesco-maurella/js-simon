@@ -36,9 +36,7 @@ function getNumsList(choiceNum, quantinty){
   return nums;
 }
 
-
 $(document).ready(function(){ // quando il dom è pronto ...
-
   // impostiamo un limite ai numeri partecipanti
   var quantityNums = 5;
   // generiamo un array di 5 numeri casuali
@@ -49,7 +47,7 @@ $(document).ready(function(){ // quando il dom è pronto ...
 
   // parte un timer
   var t = 30; // numero secondi
-  $('.timer').css({ // stili html timer
+  $('#timer').css({ // stili html timer
     'display' : 'flex',
     'align-items' : 'center',
     'justify-content' : 'center'});
@@ -58,10 +56,10 @@ $(document).ready(function(){ // quando il dom è pronto ...
     // font pixel variabili ad ogni secondo
     var fontT = (t * 20) + 'px'
     if (t === t) {
-      $('.timer').css('font-size', fontT);
+      $('#timer').css('font-size', fontT);
     }
     // stampiamo il numero secondi
-    $('.timer').text(t);
+    $('#timer').text(t);
     t--; // sottraiamo 1 al numero secondi
     }, 940);
 
@@ -73,7 +71,6 @@ $(document).ready(function(){ // quando il dom è pronto ...
     // generiamo un array di 5 numeri scelti dall'user
     var userNums = getNumsList(getUserNum, quantityNums);
     var commonNums = []; // dichiariamo array numeri comuni
-    console.log(userNums);
 
     // inseriamovi i numeri in comune tra i due precedenti array
     for (var i = 0; i < quantityNums; i++) {
@@ -81,10 +78,9 @@ $(document).ready(function(){ // quando il dom è pronto ...
         commonNums.push(userNums[i]);
       }
     }
-    console.log(commonNums);
 
     var points = commonNums.length // numeri ricordati
-    // esito
+    // esiti
     if (points === quantityNums) {
       alert('Ottima memoria!\nHai ricordato tutti i numeri:\n' + commonNums);
     } else if (!points) {
