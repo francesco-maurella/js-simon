@@ -47,14 +47,14 @@ $(document).ready(function(){ // quando il dom è pronto ...
 
   // parte un timer
   var t = 30; // numero secondi
-  $('#timer').css({ // stili html timer
+  $('#timer').css({ // stili Css timer
     'display' : 'flex',
     'align-items' : 'center',
     'justify-content' : 'center'});
 
   var timer = setInterval(function() {
     // font pixel variabili ad ogni secondo
-    var fontT = (t * 20) + 'px'
+    var fontT = (t * 20) + 'px';
     if (t === t) {
       $('#timer').css('font-size', fontT);
     }
