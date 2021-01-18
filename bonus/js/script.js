@@ -43,26 +43,41 @@ $(document).ready(function(){ // quando il dom è pronto ...
   // generiamo un array di 5 numeri casuali
   var randomNums = getNumsList(getRandomNum, quantityNums);
   // annuncio numeri random
-  alert('Tieni a mente questi ' + quantityNums + ' numeri:\n' + randomNums);
-  alert('Tra 30 secondi dovrai riscriverli');
+  $('.comic-baloon').text('Tieni a mente questi ' + quantityNums + ' numeri');
 
-  // parte un timer
-  var t = 30; // numero secondi
-  $('#timer').css({ // stili Css timer
-    'display' : 'flex',
-    'align-items' : 'center',
-    'justify-content' : 'center'});
-
-  var timer = setInterval(function() {
-    // font pixel variabili ad ogni secondo
-    var fontT = (t * 20) + 'px';
-    if (t === t) {
-      $('#timer').css('font-size', fontT);
+  setTimeout(function(){
+    for (var i = 0; i < quantityNums; i++) {
+      $('.number').eq(i).text(randomNums[i]);
     }
-    // stampiamo il numero secondi
-    $('#timer').text(t);
-    t--; // sottraiamo 1 al numero secondi
-  }, 960);
+  }, 1000);
+
+  setTimeout(function(){
+    $('.comic-baloon').text('Tra 30 secondi dovrai riscriverli');
+  }, 3000);
+
+  setTimeout(function(){
+    $('.comic-baloon').text('Inizia il conto alla rovescia');
+    $('.number').text('?');
+
+    // parte un timer
+    var t = 30; // numero secondi
+    $('#timer').css({ // stili Css timer
+      'display' : 'flex',
+      'align-items' : 'center',
+      'justify-content' : 'center'});
+
+    var timer = setInterval(function() {
+      // font pixel variabili ad ogni secondo
+      var fontT = (t * 20) + 'px';
+      if (t === t) {
+        $('#timer').css('font-size', fontT);
+      }
+      // stampiamo il numero secondi
+      $('#timer').text(t);
+      t--; // sottraiamo 1 al numero secondi
+    }, 960);
+
+  }, 9000);
 
   setTimeout(function(){
     // stop timer
@@ -91,6 +106,6 @@ $(document).ready(function(){ // quando il dom è pronto ...
     } else {
       alert('Mmmh, hai ricordato ' + points + ' numeri:\n' + commonNums);
     }
-  }, 30000);
+  }, 43000);
 
 });

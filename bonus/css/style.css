@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.flx {
+  display: flex;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+
+header {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comic-baloon{
+  min-width: 600px;
+  height: 100px;
+  padding: 30px;
+  font-family: 'Comic Neue';
+  font-size: 40px;
+  border: 2px solid #000;
+  border-radius: 20px;
+}
+
+.numbers-list{
+  margin-top: 40px;
+  justify-content: center;
+}
+.number {
+  width: 100px;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  color: #FFF;
+  font-size: 3em;
+  margin: 20px;
+  padding: 15px;
+  border-radius: 50%;
+}
