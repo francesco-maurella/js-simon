@@ -11,6 +11,7 @@
 .container {
   max-width: 800px;
   margin: auto;
+  font-family: 'Arial';
 }
 
 header {
@@ -18,9 +19,12 @@ header {
   align-items: center;
 }
 
+main{
+  text-align: center;
+}
+
 .comic-baloon{
   min-width: 600px;
-  height: 100px;
   padding: 30px;
   font-family: 'Comic Neue';
   font-size: 40px;
@@ -32,15 +36,41 @@ header {
   margin-top: 40px;
   justify-content: center;
 }
+
+.number, .input-num, .submit{
+  background-color: #000;
+  color: #FFF;
+}
+
 .number {
   width: 100px;
   height: 100px;
+  font-size: 3em;
   justify-content: center;
   align-items: center;
-  background-color: #000;
-  color: #FFF;
-  font-size: 3em;
   margin: 20px;
   padding: 15px;
   border-radius: 50%;
+}
+
+.input-num, .input-num:focus, .submit, .submit:focus {
+  border: 0;
+  outline: none;
+}
+
+.input-num {
+  min-width: 1.2em;
+  font-size: 1em;
+}
+
+.submit{
+  padding: 15px;
+  font-size: 24px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+#timer{
+  margin: 50px 0;
+  font-size: 5em;
 }
