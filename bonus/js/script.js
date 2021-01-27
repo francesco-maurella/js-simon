@@ -62,7 +62,7 @@ $(document).ready(function(){ // quando il dom è pronto ...
     var t = 30; // numero secondi
 
     var timer = setInterval(function() {
-      // font variabile ultimi secondi
+      // font-color variabile ultimi secondi
       if (t <= 5) {
         $('#timer').css('color', 'red');
       }
@@ -128,11 +128,11 @@ $(document).ready(function(){ // quando il dom è pronto ...
           $('.comic-baloon').text('Mmmh, hai ricordato ' + points + ' numeri.');
         }
 
+        $('#timer').html('<button class="submit">RIGIOCA</button>');
+
         $('.submit').click(function(){
           location.reload();
         });
-
-        $('.submit').text('RIGIOCA');
       }
     })
   }, 39500);
